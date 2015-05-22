@@ -15,6 +15,7 @@ public class fetch {
 
     public static void fetch_demanda(Atributos_text linea, String tipo_reemplazo) {
         //cada vez que hace una referencia pasa la pagina a memoria
+        System.out.println("hola");
         Proceso P = new Proceso(null, null, 0, 0);
         for (int i = 0; i < Proceso.cola_procesos.size(); i++) {
             if(linea.id_proceso.equals(Proceso.cola_procesos.get(i).nombre)){
