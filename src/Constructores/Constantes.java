@@ -10,3 +10,4 @@ public interface Constantes {
     LinkedList<Pagina> Paginas = new LinkedList<Pagina>();
     LinkedList<Frame> Frames = new LinkedList<Frame>();
 }
+//Cristian estuvo aqui
