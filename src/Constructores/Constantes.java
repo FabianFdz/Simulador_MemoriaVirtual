@@ -8,7 +8,5 @@ import java.util.LinkedList;
  */
 public interface Constantes {
     LinkedList<Pagina> Paginas = new LinkedList<Pagina>();
-    Memoria seg = new Memoria("secundaria");
-    Memoria pri = new Memoria("primaria");
-    Memoria re = new Memoria(null);
+    LinkedList<Frame> Frames = new LinkedList<Frame>();
 }
