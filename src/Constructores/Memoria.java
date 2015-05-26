@@ -7,11 +7,11 @@ import java.util.LinkedList;
  */
 public class Memoria {
     public String id;//Posibles valores ={secundaria,principal}
-    public LinkedList en_memoria; //almacena las paginas en memoria secundaria o frames en memoria principal
+    public LinkedList<Frame> en_memoria; //almacena las paginas en memoria secundaria o frames en memoria principal
 
     public Memoria(String id) { //Constructor para memoria principal y secundaria
         this.id = id;
-        this.en_memoria = new LinkedList();
+        this.en_memoria = new LinkedList<Frame>();
     }
     /*
         Ambos tipos de memoria poseen una lista en donde se almacenan ya sea los frames (en caso de principal) o

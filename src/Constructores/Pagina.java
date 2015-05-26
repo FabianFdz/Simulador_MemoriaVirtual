@@ -5,7 +5,7 @@ package Constructores;
  */
 
 public class Pagina {
-    public int id,tamaño;
+    public int id,tamaño,dirty_bit;
     public String pertenece_a_proceso;
 
     public Pagina(int id, int tamaño, String pertenece_a_proceso) {
