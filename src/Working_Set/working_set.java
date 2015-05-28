@@ -24,10 +24,9 @@ public class working_set {
         this.tasa_crecimiento = tasa_crecimiento;
     }
     
-    public void asigna_frame(Proceso pr){
+    public void asigna_frame(Proceso pr, int requiere){
         int cont = 0;
         int largo = Constantes.Frames.size();
-        int requiere = Constantes.config.ws.minimo;
         while(cont<largo){ //Condicion largo de Frames totales
             Frame frameTemp = Constantes.Frames.get(cont);
             if(requiere == 0){ //Verifica si ya cumplio todos los requerimientos del proceso
