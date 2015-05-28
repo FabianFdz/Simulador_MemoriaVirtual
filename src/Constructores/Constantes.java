@@ -11,5 +11,6 @@ public interface Constantes {
     LinkedList<Frame> Frames = new LinkedList<Frame>();
     Memoria Primaria = new Memoria("primaria");
     Memoria Secundaria = new Memoria("secundaria");
+    Configuracion config = new Configuracion(null, null, null, null, null, null);
 }
 //Cristian estuvo aqui
