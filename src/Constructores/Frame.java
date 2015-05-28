@@ -22,7 +22,7 @@ public class Frame {
     }
 
     //metodo que recibe todos los frames, y saca los frames de un solo proceso.
-    public LinkedList frames_de_un_proceso (String proceso){
+    public static LinkedList frames_de_un_proceso (String proceso){
         LinkedList<Frame> frames_de_un_proceso = new LinkedList<Frame>();
         
         for (int i = 0; i < Constantes.Frames.size(); i++) {
