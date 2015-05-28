@@ -6,9 +6,9 @@ package Constructores;
 
 public class Pagina {
     public int id,tamaño,dirty_bit;
-    public String pertenece_a_proceso;
+    public Proceso pertenece_a_proceso;
 
-    public Pagina(int id, int tamaño, String pertenece_a_proceso) {
+    public Pagina(int id, int tamaño, Proceso pertenece_a_proceso) {
         this.id = id;
         this.tamaño = tamaño;
         this.pertenece_a_proceso = pertenece_a_proceso;

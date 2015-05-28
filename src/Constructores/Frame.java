@@ -8,7 +8,7 @@ import java.util.LinkedList;
  */
 public class Frame {
     public int id,id_pagina,tamaño;
-    public String pertenece_a_proceso;
+    public Proceso pertenece_a_proceso;
     public Timestamp tiempo_ejecucion;//tiempo en el que el frame se ejecutó.
     public Timestamp tiempo_entrada; //tiempo en el que el frame entró a memoria.
     public Pagina pag;
@@ -22,7 +22,7 @@ public class Frame {
     }
 
     //metodo que recibe todos los frames, y saca los frames de un solo proceso.
-    public static LinkedList frames_de_un_proceso (String proceso){
+    public static LinkedList frames_de_un_proceso (Proceso proceso){
         LinkedList<Frame> frames_de_un_proceso = new LinkedList<Frame>();
         
         for (int i = 0; i < Constantes.Frames.size(); i++) {

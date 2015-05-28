@@ -24,7 +24,7 @@ public class working_set {
         this.tasa_crecimiento = tasa_crecimiento;
     }
     
-    public void asigna_frame(Proceso pr, int requiere){
+    public static void asigna_frame(Proceso pr, int requiere){
         int cont = 0;
         int largo = Constantes.Frames.size();
         while(cont<largo){ //Condicion largo de Frames totales
@@ -33,7 +33,7 @@ public class working_set {
                 break;
             }
             if(frameTemp.pertenece_a_proceso==null){
-                frameTemp.pertenece_a_proceso = pr.nombre; 
+                frameTemp.pertenece_a_proceso.nombre.equals(pr.nombre);
                 requiere--;
             }
             cont++;

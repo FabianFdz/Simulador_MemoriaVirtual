@@ -2,6 +2,7 @@ package replacement;
 import Constructores.Frame;
 import Constructores.Pagina;
 import Constructores.Constantes;
+import Constructores.Proceso;
 import java.util.Calendar;
 import java.util.LinkedList;
 
@@ -68,7 +69,7 @@ public class replacementPolicy {
     
     /****************************************************** metodos de replacement locales **************************************************************+*/
     
-    public static void replacement_LRU_local(Pagina paginaNueva, String proceso){
+    public static void replacement_LRU_local(Pagina paginaNueva, Proceso proceso){
         LinkedList<Frame> frames_de_un_proceso = new LinkedList<Frame>();
         frames_de_un_proceso = Frame.frames_de_un_proceso(proceso);
         
@@ -91,7 +92,7 @@ public class replacementPolicy {
     }
     
     
-    public static void replacement_MRU_local(Pagina paginaNueva, String proceso){
+    public static void replacement_MRU_local(Pagina paginaNueva, Proceso proceso){
         LinkedList<Frame> frames_de_un_proceso = new LinkedList<Frame>();
         frames_de_un_proceso = Frame.frames_de_un_proceso(proceso);
         
@@ -113,7 +114,7 @@ public class replacementPolicy {
         viejoFrame.tiempo_entrada = new java.sql.Timestamp(Calendar.getInstance().getTime().getTime());
     }
     
-    public static void replacement_FIFO_local(Pagina paginaNueva, String proceso){
+    public static void replacement_FIFO_local(Pagina paginaNueva, Proceso proceso){
         LinkedList<Frame> frames_de_un_proceso = new LinkedList<Frame>();
         frames_de_un_proceso = Frame.frames_de_un_proceso(proceso);
         
