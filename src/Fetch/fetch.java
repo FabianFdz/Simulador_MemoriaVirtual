@@ -79,3 +79,38 @@ public class fetch {
         return true;
     }
 }
+/*
+Cristian
+
+public static void fetch_demanda(Atributos_text linea, String tipo_reemplazo) {
+        //cada vez que hace una referencia pasa la pagina a memoria
+        Pagina new_pag = new Pagina(-1, -1, null);
+        int bandera = 0;
+        int paginaDeseada = ((linea.pagina_a_pasar)/(((int) Math.pow(2,constantes.L_Esquema.get(0).getBits_Offset()))/1024));
+        if(constantes.Paginas.size() >= paginaDeseada)  {
+            if(constantes.Paginas.get(paginaDeseada).pertenece_a_proceso.getId() == Integer.parseInt(linea.id_proceso)){           
+                new_pag = constantes.Paginas.get(paginaDeseada);
+                bandera = 1;
+            }else{
+                JOptionPane.showMessageDialog(null, "Error de Carga de referencia","Error al cargar ", JOptionPane.ERROR_MESSAGE);
+                bandera = 0;
+            }
+        }else{
+            JOptionPane.showMessageDialog(null, "Error de Carga de referencia","Error al cargar", JOptionPane.ERROR_MESSAGE);
+            bandera = 0;
+        }
+        if (bandera == 1){
+        for (int i = 0; i < constantes.Frames.size(); i++) {
+            if(constantes.Frames.get(i).id_pagina == 0){
+                constantes.Frames.get(i).id_pagina = new_pag.id;
+                constantes.Frames.get(i).pertenece_a_proceso = new_pag.pertenece_a_proceso; 
+                Frame x = constantes.Frames.get(i);
+                System.out.println("Frame hecho" + x.pertenece_a_proceso.getNombre());
+                break;
+            }
+        }
+        }
+    }
+
+
+*/
