@@ -10,7 +10,7 @@ import Constructores.Proceso;
  */
 public class working_set {
     public boolean tipo; //true:Fijo, false:Variable
-    public int minimo, maximo, tasa_crecimiento;
+    public int minimo, maximo, tasa_crecimiento,actual;
 
     public working_set(boolean tipo, int minimo) { //Constructor fijo
         this.tipo = tipo;
@@ -22,6 +22,7 @@ public class working_set {
         this.minimo = minimo;
         this.maximo = maximo;
         this.tasa_crecimiento = tasa_crecimiento;
+        this.actual = minimo;
     }
     
     public static void asigna_frame(Proceso pr, int requiere){
