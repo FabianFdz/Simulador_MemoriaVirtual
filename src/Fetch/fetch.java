@@ -121,10 +121,10 @@ public class fetch {
             } else {
                 working_set.asigna_frame(new_pag.pertenece_a_proceso,/*Aqui working set minimo*/);
             }
-            for (Frame Frame : Constantes.Frames) {
-                if (Frame.id_pagina == 0 && Frame.pertenece_a_proceso.equals(new_pag.pertenece_a_proceso)) {
-                    Frame.id_pagina = new_pag.id;
-                    Frame.pertenece_a_proceso = new_pag.pertenece_a_proceso;
+            for (int i = 0; i < Constantes.Frames.size(); i++) {
+                if (Constantes.Frames.get(i).id_pagina == 0 && Constantes.Frames.get(i).pertenece_a_proceso.nombre.equals(new_pag.pertenece_a_proceso.nombre)) {
+                    Constantes.Frames.get(i).id_pagina = new_pag.id;
+                    Constantes.Frames.get(i).pertenece_a_proceso = new_pag.pertenece_a_proceso;
                     return;
                 }
             }
