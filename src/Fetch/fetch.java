@@ -7,6 +7,7 @@ import Constructores.Frame;
 import Constructores.Pagina;
 import Constructores.Proceso;
 import Working_Set.working_set;
+import java.util.Iterator;
 import java.util.LinkedList;
 
 /**
@@ -100,10 +101,10 @@ public class fetch {
                 System.out.println("Todos los frames estan llenos y se debe aplicar reemplazo");
                 return;
             }
-            for (Frame Frame : Constantes.Frames) {
-                if (Frame.id_pagina == 0 && Frame.pertenece_a_proceso.equals(new_pag.pertenece_a_proceso)) {
-                    Frame.id_pagina = new_pag.id;
-                    Frame.pertenece_a_proceso = new_pag.pertenece_a_proceso;
+            for (int i = 0; i < Constantes.Frames.size(); i++) {
+                if (Constantes.Frames.get(i).id_pagina == 0 && Constantes.Frames.get(i).pertenece_a_proceso.nombre.equals(new_pag.pertenece_a_proceso.nombre)) {
+                    Constantes.Frames.get(i).id_pagina = new_pag.id;
+                    Constantes.Frames.get(i).pertenece_a_proceso = new_pag.pertenece_a_proceso;
                     return;
                 }
             }
