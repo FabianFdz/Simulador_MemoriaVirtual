@@ -3,6 +3,7 @@ import Constructores.Frame;
 import Constructores.Pagina;
 import Constructores.Constantes;
 import Constructores.Proceso;
+import java.sql.Timestamp;
 import java.util.Calendar;
 import java.util.LinkedList;
 
@@ -11,6 +12,32 @@ import java.util.LinkedList;
  * @author Esteban Leandro
  */
 public class replacementPolicy {
+    
+    public static void reemplazo_reloj(Pagina paginaNueva){   
+        boolean busq=false;//Booleano necesario para saber si un valor esta dentro de la lista
+        int posicion = -1;
+
+        Timestamp tiempoAux = Constantes.Frames.getFirst().tiempo_entrada;
+
+        for (int i = 0; i < Constantes.Frames.size(); i++) {
+
+            if (i+1 == Constantes.Frames.size()){ //Para el for cuando ya va a llegar al final de la lista
+                busq = true;
+                break;
+            }
+            if(Constantes.Frames.get(i+1).tiempo_entrada.before(tiempoAux)){ // Compara los tiempos para saber cual es el mas antiguo
+               tiempoAux =  Constantes.Frames.get(i+1).tiempo_entrada;
+               posicion = i+1; //Guarda la posicion del mas viejo
+            }else{
+                posicion = 0;
+            }
+        }
+
+        if(posicion != -1){
+            Constantes.Frames.get(posicion).pag = paginaNueva;
+        }
+
+    }
     
     public static void replacement_last_recently_used(Pagina paginaNueva){
         Frame viejoFrame = Constantes.Frames.getFirst();
@@ -68,6 +95,35 @@ public class replacementPolicy {
     
     
     /****************************************************** metodos de replacement locales **************************************************************+*/
+    
+    public static void replacement_reloj_local (Pagina paginaNueva, Proceso proceso){
+        LinkedList<Frame> frames_de_un_proceso = new LinkedList<Frame>();
+        frames_de_un_proceso = Frame.frames_de_un_proceso(proceso);
+        
+        boolean busq=false;//Booleano necesario para saber si un valor esta dentro de la lista
+        int posicion = -1;
+
+        Timestamp tiempoAux = frames_de_un_proceso.getFirst().tiempo_entrada;
+
+        for (int i = 0; i < frames_de_un_proceso.size(); i++) {
+
+            if (i+1 == frames_de_un_proceso.size()){ //Para el for cuando ya va a llegar al final de la lista
+                busq = true;
+                break;
+            }
+            if(frames_de_un_proceso.get(i+1).tiempo_entrada.before(tiempoAux)){ // Compara los tiempos para saber cual es el mas antiguo
+               tiempoAux =  frames_de_un_proceso.get(i+1).tiempo_entrada;
+               posicion = i+1; //Guarda la posicion del mas viejo
+            }else{
+                posicion = 0;
+            }
+        }
+
+        if(posicion != -1){
+            frames_de_un_proceso.get(posicion).pag = paginaNueva;
+        }
+    }
+    
     
     public static void replacement_LRU_local(Pagina paginaNueva, Proceso proceso){
         LinkedList<Frame> frames_de_un_proceso = new LinkedList<Frame>();
