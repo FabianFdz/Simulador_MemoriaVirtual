@@ -27,19 +27,17 @@ public class cleaning {
     }
     
       public void precleaning(){ 
-        boolean estado = true;
-        while(estado){
-            int largo = Constantes.Primaria.en_memoria.size();
+        try{
+            int largo = Constantes.Frames.size();
             int cont = 0;
             while(cont<largo){
-                Frame frame_temp = Constantes.Primaria.en_memoria.get(cont);
+                Frame frame_temp = Constantes.Frames.get(cont);
                 frame_temp.dirty_bit = 0;
+                Thread.sleep(this.tiempo); //Se ejecuta en la cantidad de tiempo fijado
                 cont++;
             }
         }
-        try {
-            sleep(this.tiempo); //Se ejecuta en la cantidad de tiempo fijado
-        } catch (InterruptedException ex) {            
+        catch (InterruptedException ex) {            
         }              
     }
       
