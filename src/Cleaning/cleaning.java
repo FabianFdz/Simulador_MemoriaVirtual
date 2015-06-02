@@ -23,18 +23,17 @@ public class cleaning {
     }
    
     public void cleaning_demanda(Pagina pagina_reemplazada){ //Recibe la pagina reeplaza
-        pagina_reemplazada.dirty_bit = 0;
+        buscarFrame(pagina_reemplazada.id).dirty_bit=0; //Cambia el dirty_bit a 0
     }
     
-      public void precleaning(){  //Probar
+      public void precleaning(){ 
         boolean estado = true;
         while(estado){
-            int largo = Constantes.Primaria.en_memoria.size();//Todas los frames con alguna pagina asociada
+            int largo = Constantes.Primaria.en_memoria.size();
             int cont = 0;
             while(cont<largo){
                 Frame frame_temp = Constantes.Primaria.en_memoria.get(cont);
-                Pagina pagina_temp = buscarPagina(frame_temp.id_pagina); //Suponiendo una pagina por Frame
-                pagina_temp.dirty_bit = 0;
+                frame_temp.dirty_bit = 0;
                 cont++;
             }
         }
@@ -44,13 +43,13 @@ public class cleaning {
         }              
     }
       
-    public Pagina buscarPagina(int id_Pagina){ //Busca una pagina por ID
-        int largo = Constantes.Paginas.size();
+    public Frame buscarFrame(int id_Pagina){ //Busca un Frame que tenga relacionado cierto ID de pagina
+        int largo = Constantes.Frames.size();
         int contador = 0;
         while(contador<largo){
-            Pagina pagina_temp = Constantes.Paginas.get(contador);
-            if(pagina_temp.id==id_Pagina){
-                return pagina_temp;
+            Frame frame_temp = Constantes.Frames.get(contador);
+            if(frame_temp.id_pagina==id_Pagina){
+                return frame_temp;              
             }
             contador++;
         }

@@ -7,7 +7,7 @@ import java.util.LinkedList;
  * @author Fabian_H
  */
 public class Frame {
-    public int id,id_pagina,tamaño;
+    public int id,id_pagina,tamaño,dirty_bit;
     public Proceso pertenece_a_proceso;
     public Timestamp tiempo_ejecucion;//tiempo en el que el frame se ejecutó.
     public Timestamp tiempo_entrada; //tiempo en el que el frame entró a memoria.
