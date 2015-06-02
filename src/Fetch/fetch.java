@@ -145,7 +145,7 @@ public class fetch {
     private static LinkedList<Pagina> paginas_de_proceso(Proceso P){
         LinkedList <Pagina> res = new LinkedList<Pagina>();
         for (int i = 0; i < Constantes.Paginas.size(); i++) {
-            if(Constantes.Paginas.get(i).equals(P.nombre)){
+            if(Constantes.Paginas.get(i).equals(P.nombre)&&!pagina_en_mprincipal(Constantes.Paginas.get(i).id)){
                 res.add(Constantes.Paginas.get(i));
             }
         }
