@@ -12,6 +12,9 @@ public interface Constantes {
     Memoria Primaria = new Memoria("primaria");
     Memoria Secundaria = new Memoria("secundaria");
     Configuracion config = new Configuracion(null, null, null, null, null, null);
+    Cola cola_procesos = new Cola(); 
 }
 //Cristian estuvo aqui
 //Esteban estuvo aqui
+//Cristian estuvo de nuevo aqui
+//Felix estuvo aqui
